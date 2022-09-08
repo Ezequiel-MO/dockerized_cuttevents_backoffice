@@ -6,4 +6,4 @@ before_install:
   - docker build -t oliverm316/dockerized_cuttevents_backoffice -f Dockerfile.dev .
 
 script:
-  - docker run oliverm316/dockerized_cuttevents_backoffice npm run test -- --coverage
+  - docker run -e CI=true oliverm316/dockerized_cuttevents_backoffice npm run test -- --watchAll=false
